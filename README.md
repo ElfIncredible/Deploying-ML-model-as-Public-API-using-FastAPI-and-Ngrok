@@ -5,6 +5,11 @@ This project demonstrates how machine learning models can be effectively deploye
 - [Project Overview](#project-overview)
 - [Deploy Public API](#deploy-public-api)
   - [FastAPI Server - Backend](#fastapi-server---backend)
+    - [Imports and Setup](#imports-and-setup)
+    - [CORS Configuration](#cors-configuration)
+    - [Input Data Model](#input-data-model)
+    - [Loading the Model and Scaler](#loading-the-model-and-scaler)
+    - [Prediction Endpoint](#prediction-endpoint)
   - [Ngrok Integration](#ngrok-integration)
   - [Client-side - Request Simulation](#client-side---request-simulation)
 
