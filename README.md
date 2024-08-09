@@ -4,6 +4,9 @@ This project demonstrates how machine learning models can be effectively deploye
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Deploy Public API](#deploy-public-api)
+  - [FastAPI Server - Backend](#fastapi-server---backend)
+  - [Ngrok Integration](#ngrok-integration)
+  - [Client-side - Request Simulation](#client-side---request-simulation)
 
 ## Project Overview
 This project creates a web-based API service using FastAPI that predicts whether a person is diabetic based on certain medical input features. The prediction is made using a pre-trained machine learning model, which was previously trained and saved for this purpose. The service is made accessible to the internet via ngrok, which provides a public URL for testing and deployment purposes.
