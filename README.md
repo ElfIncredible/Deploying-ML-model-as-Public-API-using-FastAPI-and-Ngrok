@@ -56,3 +56,27 @@ This project creates a web-based API service using FastAPI that predicts whether
 - ### Client-side - Request Simulation
   - **HTTP Request:** A simple Python script is used to send a POST request to the FastAPI server with the input data in JSON format.
   - **Response Handling:** The server processes the input, makes a prediction, and returns the result, which is then printed on the client side.
+    - #### Importing Libraries
+      - json: Used to convert Python dictionaries into JSON format, which is a common data format for APIs.
+      - requests: A Python library used to make HTTP requests (e.g., GET, POST) to web services.
+    - #### URL Definition
+      - The url variable stores the endpoint URL of the FastAPI service, which in this case is hosted on ngrok (https://1baa-104-199-184-211.ngrok-free.app/diabetes_prediction).
+    - #### Input Data
+      input_data_for_model is a Python dictionary containing the input features required by the diabetes prediction model:
+        - Pregnancies: Number of pregnancies.
+        - Glucose: Blood glucose level.
+        - BloodPressure: Blood pressure level.
+SkinThickness: Skin thickness measurement.
+Insulin: Insulin level.
+BMI: Body Mass Index.
+DiabetesPedigreeFunction: Diabetes pedigree function (a measure of diabetes risk based on family history).
+Age: Age of the person.
+4. Converting Input Data to JSON
+input_json = json.dumps(input_data_for_model) converts the Python dictionary input_data_for_model into a JSON-formatted string. This format is necessary for sending data in an HTTP request body.
+5. Sending the POST Request
+response = requests.post(url, data=input_json) sends a POST request to the specified URL with the JSON data in the request body.
+The requests.post function sends the input data to the FastAPI endpoint, which processes the data, makes a prediction, and returns a response.
+6. Printing the Response
+print(response.text) prints the text content of the response returned by the server. This will be either:
+"The person is not diabetic" if the model predicts that the person does not have diabetes.
+"The person is diabetic" if the model predicts that the person has diabetes.
