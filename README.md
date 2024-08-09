@@ -26,16 +26,16 @@ This project creates a web-based API service using FastAPI that predicts whether
       - _CORSMiddleware:_ Middleware to handle Cross-Origin Resource Sharing, allowing the API to be accessed from different domains.
       - _Nest_asyncio:_ Allows running asynchronous event loops within Jupyter notebooks or environments that normally do not allow it.
     - #### CORS Configuration
-      - The origins variable is set to ["*"], meaning the API will allow requests from any origin.
-      - The CORSMiddleware is added to the FastAPI application to handle CORS, allowing the API to be accessible from different domains and allowing various HTTP methods and headers.
+      - The _origins_ variable is set to _["*"]_, meaning the API will allow requests from any origin.
+      - The _CORSMiddleware_ is added to the FastAPI application to handle CORS, allowing the API to be accessible from different domains and allowing various HTTP methods and headers.
     - #### Input Data Model
-      - The diabetes_input class inherits from BaseModel and defines the structure of the input data. It includes features like Pregnancies, Glucose, BloodPressure, etc., that are required for making a prediction.
-4. Loading the Model and Scaler
-The pre-trained diabetes prediction model and the scaler (used to standardize the input data) are loaded using the pickle library. These are saved models likely trained previously on a diabetes dataset.
-5. Prediction Endpoint
-The @app.post('/diabetes_prediction') decorator defines an endpoint that listens for POST requests at /diabetes_prediction.
-The diabetes_pred function takes the input data, converts it into a dictionary, extracts the relevant features, scales the input data using the loaded scaler, and then makes a prediction using the loaded model.
-The prediction is returned as either "The person is not diabetic" or "The person is diabetic" based on the model's output.
+      - The _diabetes_input_ class inherits from _BaseModel_ and defines the structure of the input data. It includes features like _Pregnancies, Glucose, BloodPressure_, etc., that are required for making a prediction.
+    - #### Loading the Model and Scaler
+      - The pre-trained diabetes prediction model and the scaler (used to standardize the input data) are loaded using the _pickle_ library. These are saved models likely trained previously on a diabetes dataset.
+    - #### Prediction Endpoint
+      - The _@app.post('/diabetes_prediction')_ decorator defines an endpoint that listens for POST requests at _/diabetes_prediction_.
+      - The _diabetes_pred_ function takes the input data, converts it into a dictionary, extracts the relevant features, scales the input data using the loaded scaler, and then makes a prediction using the loaded model.
+      - The prediction is returned as either **"The person is not diabetic"** or **"The person is diabetic"** based on the model's output.
 6. ngrok Setup
 The authtoken is used to authenticate with ngrok.
 A tunnel is created on port 8000, and a public URL is printed, which can be used to access the local FastAPI application from anywhere on the web.
