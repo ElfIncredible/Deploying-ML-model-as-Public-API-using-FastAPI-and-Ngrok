@@ -36,12 +36,12 @@ This project creates a web-based API service using FastAPI that predicts whether
       - The _@app.post('/diabetes_prediction')_ decorator defines an endpoint that listens for POST requests at _/diabetes_prediction_.
       - The _diabetes_pred_ function takes the input data, converts it into a dictionary, extracts the relevant features, scales the input data using the loaded scaler, and then makes a prediction using the loaded model.
       - The prediction is returned as either **"The person is not diabetic"** or **"The person is diabetic"** based on the model's output.
-6. ngrok Setup
-The authtoken is used to authenticate with ngrok.
-A tunnel is created on port 8000, and a public URL is printed, which can be used to access the local FastAPI application from anywhere on the web.
-7. Run the Application
-nest_asyncio.apply() is used to ensure that the async event loop can run in environments that normally wouldn't support it (like Jupyter notebooks).
-Finally, uvicorn.run(app, port=8000) starts the FastAPI application on port 8000.
+    - #### ngrok Setup
+      - The _authtoken_ is used to authenticate with ngrok.
+      - A tunnel is created on port 8000, and a public URL is printed, which can be used to access the local FastAPI application from anywhere on the web.
+    - #### Run the Application
+      - _nest_asyncio.apply()_ is used to ensure that the async event loop can run in environments that normally wouldn't support it (like Jupyter notebooks).
+      - Finally, _uvicorn.run(app, port=8000)_ starts the FastAPI application on port 8000.
 
 - ### Ngrok Integration
   - **ngrok:** This tool is used to expose the FastAPI server running on a local machine to the internet. It provides a temporary public URL, which can be accessed from anywhere in the world.
