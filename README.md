@@ -19,17 +19,17 @@ This project creates a web-based API service using FastAPI that predicts whether
   - _Prediction Endpoint:_ A POST endpoint /diabetes_prediction is created to accept input data, scale it, and then make a prediction using the loaded model. The prediction result is either "The person is not diabetic" or "The person is diabetic".
     - #### Imports and Setup
       - _FastAPI:_ A web framework to build APIs quickly with Python.
-      - Pydantic's BaseModel: Used to define the input data model with validation.
-      - Pickle: For loading the pre-trained machine learning model and the scaler.
-      - Uvicorn: ASGI server to run the FastAPI app.
-      - Pyngrok: To create a public URL for the local server using ngrok.
-CORSMiddleware: Middleware to handle Cross-Origin Resource Sharing, allowing the API to be accessed from different domains.
-Nest_asyncio: Allows running asynchronous event loops within Jupyter notebooks or environments that normally do not allow it.
-2. CORS Configuration
-The origins variable is set to ["*"], meaning the API will allow requests from any origin.
-The CORSMiddleware is added to the FastAPI application to handle CORS, allowing the API to be accessible from different domains and allowing various HTTP methods and headers.
-3. Input Data Model
-The diabetes_input class inherits from BaseModel and defines the structure of the input data. It includes features like Pregnancies, Glucose, BloodPressure, etc., that are required for making a prediction.
+      - _Pydantic's BaseModel:_ Used to define the input data model with validation.
+      - _Pickle:_ For loading the pre-trained machine learning model and the scaler.
+      - _Uvicorn:_ ASGI server to run the FastAPI app.
+      - _Pyngrok:_ To create a public URL for the local server using ngrok.
+      - _CORSMiddleware:_ Middleware to handle Cross-Origin Resource Sharing, allowing the API to be accessed from different domains.
+      - _Nest_asyncio:_ Allows running asynchronous event loops within Jupyter notebooks or environments that normally do not allow it.
+    - #### CORS Configuration
+      - The origins variable is set to ["*"], meaning the API will allow requests from any origin.
+      - The CORSMiddleware is added to the FastAPI application to handle CORS, allowing the API to be accessible from different domains and allowing various HTTP methods and headers.
+    - #### Input Data Model
+      - The diabetes_input class inherits from BaseModel and defines the structure of the input data. It includes features like Pregnancies, Glucose, BloodPressure, etc., that are required for making a prediction.
 4. Loading the Model and Scaler
 The pre-trained diabetes prediction model and the scaler (used to standardize the input data) are loaded using the pickle library. These are saved models likely trained previously on a diabetes dataset.
 5. Prediction Endpoint
