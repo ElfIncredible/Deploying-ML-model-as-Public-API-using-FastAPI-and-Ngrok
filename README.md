@@ -10,6 +10,8 @@ This project demonstrates how machine learning models can be effectively deploye
     - [Input Data Model](#input-data-model)
     - [Loading the Model and Scaler](#loading-the-model-and-scaler)
     - [Prediction Endpoint](#prediction-endpoint)
+    - [ngrok Setup](#ngrok-setup)
+    - [Run the Application](#run-the-application)
   - [Ngrok Integration](#ngrok-integration)
   - [Client-side - Request Simulation](#client-side---request-simulation)
 
